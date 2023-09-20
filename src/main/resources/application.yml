@@ -1,0 +1,20 @@
+cloud:
+  aws:
+    dynamodb:
+      endpoint: http://localhost:4566
+    stack:
+      auto: false
+    region:
+      static: us-east-1
+    credentials:
+      access-key: dummy
+      secret-key: dummy
+
+    stream:
+      bindings:
+        input-in-0:
+          destination: samplestream
+#          group: live-ips-group
+          content: text/plain
+      function:
+        definition: input
